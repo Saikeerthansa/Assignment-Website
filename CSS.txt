@@ -1,0 +1,23 @@
+<html>
+<title> About css</title>
+<head>
+<style>
+h1{color:green;text-align:right;}
+h2{color:blue;text-align:center;}
+h3{color:red;text-align:left;}
+h4{color:brown;text-align:center;}
+body{color:purple;text-align:center;}
+</style>
+</head>
+<body>
+<h1>A demo web page</h1>
+<h2>This is about css</h2>
+<h3>css in html</h3>
+<h4>Cascading Style sheets</h4>
+<br>This is a web page.</br>
+<br>This web page is about CSS.</br>
+<br>In CSS, there are three types.</br>
+<br>They are:</br>
+<br>Inline CSS,Internal CSS,External CSS.</br>
+</body>
+</html>

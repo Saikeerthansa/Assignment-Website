@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous"
+      />
+      <link rel="stylesheet" href="styles.css" />
+      <title>Amrita Cyber Nation</title>
+    </head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mouse_events.html">Mouse Events</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="form.html">Form Design</a></li>
+            <li><a href="security.html">Security</a></li>
+        </ul>
+    </nav>
+    <div class="slider-container">
+      <div
+        class="slide active"
+        style="
+          background-image: url('cyber-nation-thumb.jpg');
+        "
+      ></div>
+      <div
+        class="slide"
+        style="
+          background-image: url('gamefusion.jpg');
+        "
+      ></div>
+
+      <div
+        class="slide"
+        style="
+          background-image: url('fic.jpg');
+        "
+      ></div>
+
+      <div
+        class="slide"
+        style="
+          background-image: url('ctf.jpg');
+        "
+      ></div>
+
+      <div
+        class="slide"
+        style="
+          background-image: url('hackethix.jpg');
+        "
+      ></div>
+
+      <button class="arrow left-arrow" id="left">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+
+      <button class="arrow right-arrow" id="right">
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+    <script>
+      const body = document.body
+const slides = document.querySelectorAll('.slide')
+const leftBtn = document.getElementById('left')
+const rightBtn = document.getElementById('right')
+
+let activeSlide = 0
+
+rightBtn.addEventListener('click', () => {
+  activeSlide++
+
+  if (activeSlide > slides.length - 1) {
+    activeSlide = 0
+  }
+
+  setBgToBody()
+  setActiveSlide()
+})
+
+leftBtn.addEventListener('click', () => {
+  activeSlide--
+
+  if (activeSlide < 0) {
+    activeSlide = slides.length - 1
+  }
+
+  setBgToBody()
+  setActiveSlide()
+})
+
+setBgToBody()
+
+function setBgToBody() {
+  body.style.backgroundImage = slides[activeSlide].style.backgroundImage
+}
+
+function setActiveSlide() {
+  slides.forEach((slide) => slide.classList.remove('active'))
+
+  slides[activeSlide].classList.add('active')
+}
+    </script>
+    <section>
+      <h2>Amrita Cyber Nation</h2>
+      <p>Date: October 27, 2023</p>
+      <p>Venue: Amrita-Vishwa-Vidyapeetham</p>
+      <p>Description: Join us for the highly anticipated Amrita CyberNation 2023 and the NATIONAL CYBER TECH FEST conducted at Amrita vishwa Vidyapeetham, Chennai campus, returning with even more excitement and innovation!
+        Mark your calendars for a thrilling two-day experience on 27th and 28th October. This year, we're thrilled to announce the special guest, Dr. Subramanian Neelakantan, Executive Director of the Society of Electronic Transactions and Security (SETS), Taramani, Chennai. With captivating technical and non-technical competitions open to both individuals and teams, you stand a chance to win exhilarating cash prizes and more!
+         Get ready for a cybersecurity adventure like never before, and let's make Amrita CyberNation 2023 an event to remember! Stay tuned for more updates and prepare to be part of something truly extraordinary.
+        </p>
+    </section>
+</body>
+</html>

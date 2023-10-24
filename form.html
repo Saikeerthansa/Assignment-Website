@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Amrita Cyber Nation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-image: url('cyber-nation-thumb.jpg');
+            background-size: device-width;
+            background-position: center;
+        }
+
+        .register-button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body class="">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mouse_events.html">Mouse Events</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="form.html">Form Design</a></li>
+            <li><a href="security.html">Security</a></li>
+        </ul>
+    </nav>
+
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form>
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your Name" required>
+
+            <label for="dob" class="form-label">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" class="form-input" required>
+
+            <label for="phone" class="form-label">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" class="form-input" pattern="[0-9]{10}"
+                placeholder="Enter your phone number">
+
+            <label for="email" class="form-label honeypot">Email:</label>
+            <input type="text" id="email" name="email" class="form-input">
+
+            <label for="state" class="form-label">State:</label>
+            <select id="state" name="state" class="form-input">
+                <option value="ny">Andhra pradesh</option>
+                <option value="ca">Telangana</option>
+                <option value="ca">Tamilnadu</option>
+                <option value="ca">Madhya Pradesh</option>
+                <option value="ca">Bihar</option>
+            </select>
+
+            <label for="department" class="form-label">Department:</label>
+            <select id="department" name="department" class="form-input">
+                <option value="cys">Cyber security</option>
+                <option value="cs">Computer Science</option>
+                <option value="ee">Electrical Engineering</option>
+                <option value="aie">Artificial Intelligence</option>
+            </select>
+
+            <label for="Year" class="form-label">Year:</label>
+            <input type="text" id="Year" name="Year" class="form-input" placeholder="Enter year you are studying in"
+                required>
+
+            <div class="form-label">Applying for:</div>
+            <div class="form-checkboxes">
+                <label for="Capture the flag">Capture the flag</label>
+                <input type="checkbox" id="Capture the flag" name="interests" value="Capture the flag">
+                <label for="Hackethix">Hackethix</label>
+                <input type="checkbox" id="Hackethix" name="interests" value="Hackethix">
+                <label for="Game Fusion">Game Fusion</label>
+                <input type="checkbox" id="Game Fusion" name="interests" value="Game Fusion">
+            </div>
+
+            <div class="g-recaptcha" data-sitekey="6LdeiMcoAAAAANm4S2XomvBYFiMrA4LIcesegPjk"></div>
+            <input type="button" value="Register" class="register-button" onclick="validateCaptcha()">
+        </form>
+    </div>
+
+    <script>
+        // Function to validate reCAPTCHA before form submission
+        function validateCaptcha() {
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                // reCAPTCHA not verified
+                alert("Please complete the reCAPTCHA.");
+                return false;
+            } else {
+                // reCAPTCHA verified, proceed with form submission
+                document.forms[0].submit();
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>
